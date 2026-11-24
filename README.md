@@ -1,9 +1,14 @@
 # Nazemly — Institute Demo
 
-An isolated educational demonstration of the Nazemly employee-management system.
+Educational employee management demonstration using sample data only.
 
-The `source.zip` archive holds the application source from the approved demo package. Render unpacks it during the Docker build. It contains fictional demo records only; cloud account passwords are configured as secret environment variables on Render and are **not** committed to the repository.
+This repository contains the **approved cloud demo source archive** and a minimal Dockerfile. During deployment Docker extracts `source.zip`, then starts `cloud_launch.py`.
 
-**Hosting:** Render Free; the service can spin down when idle and its local SQLite data is temporary.
+## Hosting
+Render Free (Python + SQLite). SQLite data is ephemeral on the free service; any changes made during the demo might be lost when the service restarts or sleeps.
 
-**Not a production system.**
+Set both secret environment variables on Render:
+- `NAZEMLY_ADMIN_PASSWORD`
+- `NAZEMLY_EMPLOYEE_PASSWORD`
+
+Do not put real company information into the demonstration or use this deployment as a production HR system.
