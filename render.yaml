@@ -1,0 +1,14 @@
+# Nazemly educational demonstration — Render Free.
+# Uses synthetic data only; local SQLite storage is ephemeral.
+services:
+  - type: web
+    name: nazemly-institute-demo
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    autoDeployTrigger: off
+    envVars:
+      - key: NAZEMLY_ADMIN_PASSWORD
+        generateValue: true
+      - key: NAZEMLY_EMPLOYEE_PASSWORD
+        generateValue: true
